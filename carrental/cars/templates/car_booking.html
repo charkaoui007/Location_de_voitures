@@ -1,0 +1,17 @@
+{% extends "car_base.html" %}
+{% load bootstrap3 %}
+{% block car_content %}
+
+<h1>Confirm your booking</h1>
+
+<div class="login-page">
+    <form id="booking-form" action="" method="POST" class="post-form">
+
+        {% csrf_token %}
+        {% bootstrap_form form %}
+         <a href="{% url 'cars:booking_list'%}"><button type="submit" class="save btn btn-default">Book</button></a>
+    </form>
+</div>
+
+{% endblock car_content %}
+

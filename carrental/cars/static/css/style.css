@@ -1,0 +1,156 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+a:hover {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+body {
+    font-family: "Montserrat";
+    max-width: 100vw;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#navbar{
+    font-size: 1.5rem;
+}
+
+#navbar-home{
+
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 6rem;
+    margin-top: 6rem;
+    color: var(--primary-text-color);
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 4.5rem;
+    margin-top: 4.5rem;
+    color: var(--primary-text-color);
+    text-align: center;
+}
+
+img {
+    width:90%;
+    height:100%;
+    object-fit:cover;
+}
+
+
+
+.landing-page{
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-page{
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+	float: left;
+	width: 20%;
+    position:absolute
+	padding:20px;
+	text-align: center;
+}
+
+.list-content {
+    margin-top: 2rem;
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.car {
+    background: #ebebeb;
+    border-radius: 10px;
+    min-width: 300px;
+    max-width: 300px;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    flex: 1;
+}
+
+.car:hover{
+    background-color:#d3d3d3;
+}
+
+.car h2 {
+  font-size: 30px;
+  margin: 0.25rem;
+}
+.car p {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.square
+{
+	width: 50%;
+	float: left;
+
+}
+
+.button {
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    flex: 1;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.car-detail{
+    width:90%
+    padding-top: 50px;
+}
+
+
+
+.car-booking {
+    background: #ebebeb;
+    border-radius: 10px;
+    min-width: 300px;
+    max-width: 300px;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    flex: 1;
+}
+
+.car-booking h2 {
+  font-size: 30px;
+  margin: 0.25rem;
+}
+.car-bookig p {
+  font-size: 15px;
+  line-height: 18px;
+}
+

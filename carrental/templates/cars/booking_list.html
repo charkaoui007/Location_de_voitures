@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>Your bookings, {{user}}</h1>
+
+<div class="list-content">
+        {% for booking in booking_list %}
+            {%if booking.user == user%}
+                <div class="car-booking">
+                    <h2>{{booking.car}}</h2>
+                    <h4>Pick-up: {{booking.check_in}}</h4>
+                    <h4>Drop-off: {{booking.check_out}}</h4>
+                    <h4>
+                        <a href="{{booking.get_cancel_booking_url}}">
+                            <i class="far fa-2x fa-times-circle">
+                                Resign
+                            </i>
+                        </a>
+                    </h4>
+                </div>
+            {%endif%}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

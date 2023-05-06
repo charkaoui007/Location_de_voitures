@@ -1,0 +1,44 @@
+{% extends "car_base.html" %}
+{% load static %}
+{% block car_content %}
+<div style="padding: 60px;" ></div>
+
+<div class="square">
+    <div class="car-detail" style="  margin-top: -30px;" >
+        <h2 style="font-size:190%;color:red;">{{car}}</h2>
+        <p style=" font-size: 140%;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id optio rem saepe culpa architecto tempora
+            numquam debitis reiciendis! Quaerat laudantium consequuntur doloribus quod placeat consectetur
+            veniam,
+            rerum repellendus magnam labore.
+        </p>
+        <p style=" font-size: 120%;font-weight: bold;">Color: {{ car.detail.get_color_display }}</p>
+        <p style=" font-size: 120%;font-weight: bold;">No of seats: {{ car.detail.seats }}</p>
+        <p style=" font-size: 120%;font-weight: bold;">Fuel type: {{ car.detail.get_fuel_display }}</p>
+        <p style=" font-size: 120%;font-weight: bold;">Engine power:{{ car.detail.power }}</p>
+        <p style=" font-size: 120%;font-weight: bold;">Prod. date: {{ car.detail.production_date }}</p>
+        <p style=" font-size: 120%;font-weight: bold;">Price: {{ car.detail.price }} /24h</p>
+        {% if user.is_authenticated %}
+            <a class="btn btn-primary btn-comment" href="{% url 'cars:booking' car.id %}">Book this car</a>
+         {% else %}
+            <a class="btn btn-primary btn-comment" href="{% url 'accounts:login' %}">Log in to book </a>
+        {% endif %}
+
+    </div>
+</div>
+
+<div class="square" >
+    {% if car.image %}
+        <img src="{{ car.image.url}}" alt="cant load media">
+    {% endif %}
+</div>
+
+<div style="clear: both;"></div>
+
+
+
+
+
+
+{% endblock car_content %}
+

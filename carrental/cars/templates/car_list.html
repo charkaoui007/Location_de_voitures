@@ -1,0 +1,41 @@
+{% extends "car_base.html" %}
+{% load static %}
+{% load bootstrap3 %}
+{% block car_content %}
+
+<div class="sidebar">
+    <div class class="login-page">
+        <form method="post" class="post-form">
+
+            {% csrf_token %}
+                <table>
+                    {% bootstrap_form car_main_form %}
+                    {% bootstrap_form car_detail_form %}
+                </table>
+             </br></br>
+            <button type="submit" class="save btn btn-default">Search</button>
+        </form>
+    </div>
+</div>
+<div class="list-content">
+    {% for car in cars %}
+        <div class="car">
+            <div>
+                <a class href="{% url 'cars:detail' car.id %}">
+                    {% if car.image %}
+                        <img src="{{ car.image.url}}">
+                    {% endif %}
+                        <h2>{{car.main.brand}} {{ car.main.model }}</h2>
+                        <p>Color: {{ car.detail.get_color_display }}</p>
+                        <p>No of seats: {{ car.detail.seats }}</p>
+                        <p>Fuel type: {{ car.detail.get_fuel_display }}</p>
+                        <p>Engine power:{{ car.detail.power }}</p>
+                        <p>Prod. date: {{ car.detail.production_date }}</p>
+                        <p>Price: {{ car.detail.price }} /24h</p>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock car_content %}
